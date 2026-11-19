@@ -1,5 +1,6 @@
 from gpiozero import Button, LED
 from signal import pause
+from time import sleep
 
 led = LED(14)
 button = Button(4)
