@@ -1,23 +1,22 @@
-from gpiozero import Button, LED, TonalBuzzer
+from gpiozero import Button, LED, TonalBuzzer, PWMOutputDevice
 from signal import pause
 from time import sleep
 
 # Récupération du bon PIN sur le PI pour chaque élément
 led = LED(14)
 button = Button(4)
-buzzer = TonalBuzzer(17)
 
-# Mélodie
-MELODY = [("C4", 0.15), ("E4", 0.15), ("G4", 0.15), ("C5", 0.3)]
-def play_melody():
+VOLUME = 0.1
+FREQUENCE = 880
+
+def play_note():
   led.on()
-  for note, duration in MELODY:
-    buzzer.play(note)
-    sleep(duration)
-  buzzer.stop()
+  buzzer.frequency = FREQUENCE
+  buzzer.value = VOLUME *0.5
+  sleep(1)
+  buzzer.value = 0
   led.off()
 
-
-button.when_pressed = play_melody
+button.when_pressed = play_note
 
 pause()
