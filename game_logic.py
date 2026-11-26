@@ -1,19 +1,27 @@
 from random import randint
 import time
+# SETUP
 
-# setup
-hunger = randint(50,100)
-mood = randint(50,100)
-energy = randint(50,100)
-
+# minimum time in seconds between two accepted button presses
 COOLDOWN = 15
-# TICK_INTERVAL = I
-# LOW_THRESHOLD = L = 33
-# GAUGE_MAX = 100
-# GAUGE_MIN = 0
 
-last_tick = time.monotonic()
-last_press = time.monotonic() - COOLDOWN
+# time in seconds between two automatic gauge decreases
+TICK_INTERVAL = 10
 
-print(last_tick)
-print(last_press)
+# a gauge below this value counts as low (used to compute the pet state)
+LOW_THRESHOLD = 33
+
+# gauges, each between GAUGE_MIN and GAUGE_MAX
+GAUGE_MAX = 100
+GAUGE_MIN = 0
+hunger = randint(50, 100)
+mood = randint(50, 100)
+energy = randint(50, 100)
+
+# current time at launch, used to initialize last_tick and last_press
+now = time.monotonic()
+
+# value of the last automatic gauge decrease, starts at the current time when the game launches
+last_tick = now
+# value of the last accepted button press, starts at now - COOLDOWN so the first press is accepted
+last_press = now - COOLDOWN
