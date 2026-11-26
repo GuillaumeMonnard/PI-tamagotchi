@@ -1,4 +1,5 @@
 from random import randint
+import time
 
 # setup
 hunger = randint(50,100)
