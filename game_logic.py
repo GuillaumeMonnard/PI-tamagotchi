@@ -18,6 +18,10 @@ hunger = randint(50, 100)
 mood = randint(50, 100)
 energy = randint(50, 100)
 
+# points added to the correponsding gauge when a button is pressed, between EFFECT_MIN and EFFECT_MAX
+EFFECT_MIN = randint(15, 30)
+EFFECT_MAX = randint(15, 30)
+
 # current time at launch, used to initialize last_tick and last_press
 now = time.monotonic()
 
