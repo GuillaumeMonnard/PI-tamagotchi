@@ -19,8 +19,8 @@ mood = randint(50, 100)
 energy = randint(50, 100)
 
 # boost a button press gives to its gauge, between EFFECT_MIN and EFFECT_MAX
-EFFECT_MIN = randint(15, 30)
-EFFECT_MAX = randint(15, 30)
+EFFECT_MIN = 15
+EFFECT_MAX = 30
 
 # amount lost by the other gauge when an action is performed (energy for eat and play, hunger for sleep)
 SIDE_COST = 5
