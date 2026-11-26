@@ -1,9 +1,9 @@
 from gpiozero import Button
 from signal import pause
 
-btn_eat = Button(4)
-btn_play = Button(17)
-btn_sleep = Button(22)
+btn_eat = Button(4, bounce_time=0.05)
+btn_play = Button(17, bounce_time=0.05)
+btn_sleep = Button(22, bounce_time=0.05)
 
 # btn_eat test
 def btn_eat_press():
@@ -14,7 +14,6 @@ def btn_play_press():
 
 def btn_sleep_press():
   print("sleep")
-
 
 btn_eat.when_pressed = btn_eat_press
 
