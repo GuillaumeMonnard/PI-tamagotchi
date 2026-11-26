@@ -5,19 +5,21 @@ btn_eat = Button(4)
 btn_play = Button(17)
 btn_sleep = Button(22)
 
-def button_test_press():
-  print("Button pressed")
+# btn_eat test
+def btn_eat_press():
+  print("eat")
 
-def button_test_release():
-  print("Button released")
+def btn_play_press():
+  print("play")
 
-btn_eat.when_pressed = button_test_press
-btn_eat.when_released = button_test_release
+def btn_sleep_press():
+  print("sleep")
 
-btn_play.when_pressed = button_test_press
-btn_play.when_released = button_test_release
 
-btn_sleep.when_pressed = button_test_press
-btn_sleep.when_released = button_test_release
+btn_eat.when_pressed = btn_eat_press
+
+btn_play.when_pressed = btn_play_press
+
+btn_sleep.when_pressed = btn_sleep_press
 
 pause()
